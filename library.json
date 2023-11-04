@@ -1,7 +1,7 @@
 {
   "name": "M5Battery",
   "version": "0.0.1",
-  "description": "An M5Stack library for scrolling text",
+  "description": "An M5Stack library for displaying battery charge.",
   "keywords": "esp32, m5stack, m5stickc, m5stickc-plus",
   "repository": {
     "type": "git",
