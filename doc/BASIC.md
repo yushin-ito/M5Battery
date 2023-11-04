@@ -40,6 +40,7 @@ Call the fuctions using the created instance.
 ### bat.setCusor(x, y) => void
 
 Set position of battery box.
+
 Kind: instance method of `M5Battery`
 
 | Param |  Type   |
@@ -50,6 +51,7 @@ Kind: instance method of `M5Battery`
 ### bat.setSize(size) => void
 
 Set size(1~7) of battery box.
+
 Kind: instance method of `M5Battery`
 
 | Param |  Type  |
@@ -59,6 +61,7 @@ Kind: instance method of `M5Battery`
 ### bat.setBgColor(color) => void
 
 Set bg color of battery box.
+
 Kind: instance method of `M5Battery`
 
 | Param |   Type   |
@@ -68,6 +71,7 @@ Kind: instance method of `M5Battery`
 ### bat.setBorderColor(color) => void
 
 Set border color of battery box.
+
 Kind: instance method of `M5Battery`
 
 | Param |   Type   |
@@ -77,24 +81,29 @@ Kind: instance method of `M5Battery`
 ### bat.flip() => void
 
 Flip battery box.
+
 Kind: instance method of `M5Battery`
 
 ### bat.showBattery() => void
 
 Show battery.
+
 Kind: instance method of `M5Battery`
 
 ### bat.deleteBattery() => void
 
 Delete battery.
+
 Kind: instance method of `M5Battery`
 
 ### bat.updateBattery() => void
 
 Update battery.
+
 Kind: instance method of `M5Battery`
 
 ### bat.isLowBattery() => bool
 
 Get if the battery is low.
+
 Kind: instance method of `M5Battery`
