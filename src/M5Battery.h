@@ -7,11 +7,13 @@ private:
 
   M5Canvas* canvas;
   bool _flag = true;
+  bool _flip;
   int32_t _x;
   int32_t _y;
   size_t _size;
   int32_t _width;
   int32_t _height;
+  int32_t _border_width;
   int32_t _top_width;
   uint32_t _bg_color;
   uint32_t _border_color;
@@ -25,6 +27,7 @@ public:
   void setSize(size_t size);
   void setBgColor(uint32_t color);
   void setBorderColor(uint32_t color);
+  void flip();
   void showBattery();
   void deleteBattery();
   void updateBattery();

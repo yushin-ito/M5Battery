@@ -11,19 +11,19 @@
 <br>
 
 <h2>📝 Overview</h2>
-An M5Stack library for scrolling text.
+An M5Stack library for displaying battery charge.
 
 <br>
 <br>
 
 <h2>🚀 Features</h2>
 <ul>
-  <li>Scroll from left to right on the lcd</li>
-  <li>Customize color and speed</li>
+  <li>Display battery charge</li>
+  <li>Customize size and rotation</li>
 </ul>
 <br>
 <div align="center">
-  <img src="https://github.com/yushin-ito/M5Battery/assets/75526539/7a1514ee-3172-422f-889b-651a5821e1dd" width="80%"/>
+  <img src="https://github.com/yushin-ito/M5Battery/assets/75526539/b1e6bdbb-6da7-4f03-a09a-3ff254dc0549" width="80%"/>
 </div>
 
 <br>
@@ -52,17 +52,18 @@ An M5Stack library for scrolling text.
 #include <M5Unified.h>
 #include <M5Battery.h>
 
-M5Battery ts;
+M5Battery bat;
 
 void setup() {
-    auto cfg = M5.config();
-    M5.begin(cfg);
-    ts.setCusor(0, M5.Display.height() / 2, 1);
-    ts.setText("Hello World!");
+  auto cfg = M5.config();
+  M5.begin(cfg);
+  bat.setCusor(M5.Display.width() / 2, M5.Display.height() / 2);
+  bat.setSize(3);
 }
 
 void loop() {
-    ts.showBattery();
+  bat.showBattery();
+  bat.updateBattery();
 }
 ```
 

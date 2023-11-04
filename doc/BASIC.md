@@ -4,29 +4,31 @@
   - [Instance Basics](#instance-basics)
     - [Create a instance](#create-a-instance)
   - [Functions Basic](#functions-basic)
-    - [ts.Cusor(x, y, scroll_pixel) => void](#tssetcusorx-y-scroll_pixel--void)
-    - [ts.setTextFont(font) => void](#tssettextfontfont--void)
-    - [ts.setBgColor(color) => void](#tssetbgcolorcolor--void)
-    - [ts.setTextColor(color) => void](#tssettextcolorcolor--void)
-    - [ts.setText(text) => void](#tssettexttext--void)
-    - [ts.showTextScroll() => void](#tsshowtextscroll--void)
-    - [ts.getScrollCount() => void](#tsgetscrollcount--uint8_t)
+    - [bat.setCusor(x, y) => void](#batsetcusorx-y--void)
+    - [bat.setSize(size) => void](#batsetsizesize--void)
+    - [bat.setBgColor(color) => void](#batsetbgcolorcolor--void)
+    - [bat.setBorderColor(color) => void](#batsetbordercolorcolor--void)
+    - [bat.flip() => void](#batflip--void)
+    - [bat.showBattery() => void](#batshowbattery--void)
+    - [bat.deleteBattery() => void](#batdeletebattery--void)
+    - [bat.updateBattery() => void](#batupdatebattery--void)
+    - [bat.isLowBattery() => bool](#batislowbattery--bool)
 
 ## Instance Basics
 
 ### Create a instance
 
-Include the `M5TextScroll.h` and `M5Unified`
+Include the `M5Battery.h` and `M5Unified`
 
 ```c
 #include <M5Unified.h>
-#include <M5TextScroll.h>
+#include <M5Battery.h>
 ```
 
 Then Instanciate
 
 ```c
-M5TextScroll ts;
+M5Battery bat;
 ```
 
 Your instance is now ready.
@@ -35,59 +37,64 @@ Your instance is now ready.
 
 Call the fuctions using the created instance.
 
-### ts.setCusor(x, y, scroll_pixel) => void
+### bat.setCusor(x, y) => void
 
-Set position and speed of text scroll box.
-Kind: instance method of `M5TextScroll`
+Set position of battery box.
+Kind: instance method of `M5Battery`
 
-|    Param     |  Type   |
-| :----------: | :-----: |
-|      x       | int32_t |
-|      y       | int32_t |
-| scroll_pixel | uint8_t |
+| Param |  Type   |
+| :---: | :-----: |
+|   x   | int32_t |
+|   y   | int32_t |
 
-### ts.setTextFont(font) => void
+### bat.setSize(size) => void
 
-Set font of text.
-Kind: instance method of `M5TextScroll`
+Set size(1~7) of battery box.
+Kind: instance method of `M5Battery`
 
-| Param |     Type      |
-| :---: | :-----------: |
-| font  | lgfx::IFont\* |
+| Param |  Type  |
+| :---: | :----: |
+| size  | size_t |
 
-### ts.setBgColor(color) => void
+### bat.setBgColor(color) => void
 
-Set bg color of text scroll box.
-Kind: instance method of `M5TextScroll`
-
-| Param |   Type   |
-| :---: | :------: |
-| color | uint32_t |
-
-### ts.setTextColor(color) => void
-
-Set bg color of text.
-Kind: instance method of `M5TextScroll`
+Set bg color of battery box.
+Kind: instance method of `M5Battery`
 
 | Param |   Type   |
 | :---: | :------: |
 | color | uint32_t |
 
-### ts.setText(text) => void
+### bat.setBorderColor(color) => void
 
-Set scrolling text.
-Kind: instance method of `M5TextScroll`
+Set border color of battery box.
+Kind: instance method of `M5Battery`
 
-| Param |     Type     |
-| :---: | :----------: |
-| text  | const chat\* |
+| Param |   Type   |
+| :---: | :------: |
+| color | uint32_t |
 
-### ts.showTextScroll() => void
+### bat.flip() => void
 
-Show text scroll.
-Kind: instance method of `M5TextScroll`
+Flip battery box.
+Kind: instance method of `M5Battery`
 
-### ts.getScrollCount() => uint8_t
+### bat.showBattery() => void
 
-Get scrolling count.
-Kind: instance method of `M5TextScroll`
+Show battery.
+Kind: instance method of `M5Battery`
+
+### bat.deleteBattery() => void
+
+Delete battery.
+Kind: instance method of `M5Battery`
+
+### bat.updateBattery() => void
+
+Update battery.
+Kind: instance method of `M5Battery`
+
+### bat.isLowBattery() => bool
+
+Get if the battery is low.
+Kind: instance method of `M5Battery`
