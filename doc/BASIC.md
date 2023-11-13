@@ -97,12 +97,12 @@ Kind: instance method of `M5Battery`
 
 Initialize battery with position.
 
+Kind: instance method of `M5Battery`
+
 | Param |  Type   |
 | :---: | :-----: |
 |   x   | int32_t |
 |   y   | int32_t |
-
-Kind: instance method of `M5Battery`
 
 ### bat.show() => void
 
