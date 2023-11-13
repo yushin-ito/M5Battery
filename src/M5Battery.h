@@ -6,10 +6,11 @@ private:
   const uint8_t MIN_SIZE = 1;
 
   M5Canvas* canvas;
-  bool _flag = true;
-  bool _flip;
+  bool _drawing;
+  bool _changed;
   int32_t _x;
   int32_t _y;
+  uint8_t _rotation;
   size_t _size;
   int32_t _width;
   int32_t _height;
@@ -18,18 +19,30 @@ private:
   uint32_t _bg_color;
   uint32_t _border_color;
 
-  void drawBatteryShape();
-  uint32_t getBatteryColor();
-
 public:
   M5Battery();
-  void setCusor(int32_t x, int32_t y);
+  void setPosition(int32_t x, int32_t y);  
+  void setRotation(uint8_t rotation);
   void setSize(size_t size);
   void setBgColor(uint32_t color);
   void setBorderColor(uint32_t color);
-  void flip();
-  void showBattery();
-  void deleteBattery();
-  void updateBattery();
-  bool isLowBattery();
+  void init(int32_t x, int32_t y);
+  void show();
+  void hide();
+  bool isDrawing();
+  bool isChanged();
+  void setChanged(bool changed);
+  void drawBattery();
+  uint32_t getBatteryColor();
+  bool isWarning();
+  bool isCharging();
+};
+
+class Context {
+private:
+  M5Battery* _bat;
+
+public:
+  Context(M5Battery* bat);
+  M5Battery* getBattery();
 };

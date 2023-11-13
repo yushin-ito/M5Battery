@@ -6,11 +6,27 @@ M5Battery bat;
 void setup() {
   auto cfg = M5.config();
   M5.begin(cfg);
-  bat.setCusor(M5.Display.width() / 2, M5.Display.height() / 2);
-  bat.setSize(3);
+
+  bat.init(0, 0);
 }
 
 void loop() {
-  bat.showBattery();
-  bat.updateBattery();
+  M5.update();
+  
+  if (M5.BtnA.wasPressed()) {
+    if (bat.isDrawing()) {
+      bat.hide();
+    }
+    else {
+      bat.show();
+    }
+  }
+
+  if (M5.BtnB.wasPressed()) {
+    bat.setPosition(random(0, M5.Display.width()), random(0, M5.Display.height()));
+    bat.setRotation(random(0, 3));
+    bat.setSize(random(1, 7));
+  }
+
+  delay(100);
 }

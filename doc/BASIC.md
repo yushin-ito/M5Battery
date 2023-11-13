@@ -4,15 +4,20 @@
   - [Instance Basics](#instance-basics)
     - [Create a instance](#create-a-instance)
   - [Functions Basic](#functions-basic)
-    - [bat.setCusor(x, y) => void](#batsetcusorx-y--void)
+    - [bat.setPosition(x, y) => void](#batsetpositionx-y--void)
+    - [bat.setRotation(rotation) => void](#batsetrotationrotation--void)
     - [bat.setSize(size) => void](#batsetsizesize--void)
     - [bat.setBgColor(color) => void](#batsetbgcolorcolor--void)
     - [bat.setBorderColor(color) => void](#batsetbordercolorcolor--void)
-    - [bat.flip() => void](#batflip--void)
-    - [bat.showBattery() => void](#batshowbattery--void)
-    - [bat.deleteBattery() => void](#batdeletebattery--void)
-    - [bat.updateBattery() => void](#batupdatebattery--void)
-    - [bat.isLowBattery() => bool](#batislowbattery--bool)
+    - [bat.init(x, y) => void](#batinitx-y--void)
+    - [bat.show() => void](#batshow--void)
+    - [bat.hide() => void](#bathide--void)
+    - [bat.isDrawing() => bool](#batisdrawing--bool)
+    - [bat.isChanged() => bool](#batischanged--bool)
+    - [bat.drawBattery() => void](#batdrawbattery--void)
+    - [bat.getBatteryColor() => uint32_t](#batgetbatterycolor--uint32_t)
+    - [bat.isWarning() => bool](#batiswarning--bool)
+    - [bat.isCharging() => bool](#batischarging--bool)
 
 ## Instance Basics
 
@@ -20,14 +25,14 @@
 
 Include the `M5Battery.h` and `M5Unified`
 
-```c
+```c++
 #include <M5Unified.h>
 #include <M5Battery.h>
 ```
 
 Then Instanciate
 
-```c
+```c++
 M5Battery bat;
 ```
 
@@ -37,7 +42,7 @@ Your instance is now ready.
 
 Call the fuctions using the created instance.
 
-### bat.setCusor(x, y) => void
+### bat.setPosition(x, y) => void
 
 Set position of battery box.
 
@@ -47,6 +52,16 @@ Kind: instance method of `M5Battery`
 | :---: | :-----: |
 |   x   | int32_t |
 |   y   | int32_t |
+
+### bat.setRotation(rotation) => void
+
+Set rotation of battery box.
+
+Kind: instance method of `M5Battery`
+
+|  Param   |  Type   |
+| :------: | :-----: |
+| rotation | uint8_t |
 
 ### bat.setSize(size) => void
 
@@ -78,32 +93,61 @@ Kind: instance method of `M5Battery`
 | :---: | :------: |
 | color | uint32_t |
 
-### bat.flip() => void
+### bat.init(x, y) => void
 
-Flip battery box.
+Initialize battery with position.
+
+| Param |  Type   |
+| :---: | :-----: |
+|   x   | int32_t |
+|   y   | int32_t |
 
 Kind: instance method of `M5Battery`
 
-### bat.showBattery() => void
+### bat.show() => void
 
 Show battery.
 
 Kind: instance method of `M5Battery`
 
-### bat.deleteBattery() => void
+### bat.hide() => void
 
-Delete battery.
-
-Kind: instance method of `M5Battery`
-
-### bat.updateBattery() => void
-
-Update battery.
+Hide battery.
 
 Kind: instance method of `M5Battery`
 
-### bat.isLowBattery() => bool
+### bat.isDrawing() => bool
+
+Get if the battery is drawing.
+
+Kind: instance method of `M5Battery`
+
+### bat.isChanged() => bool
+
+Get if the battery style is changed.
+
+Kind: instance method of `M5Battery`
+
+### bat.drawBattery() => void
+
+Display battery.
+
+Kind: instance method of `M5Battery`
+
+### bat.getBatteryColor() => uint32_t
+
+Get battery color.
+
+Kind: instance method of `M5Battery`
+
+### bat.isWarning() => bool
 
 Get if the battery is low.
+
+Kind: instance method of `M5Battery`
+
+### bat.isCharging() => bool
+
+Get if the battery is charging.
 
 Kind: instance method of `M5Battery`
