@@ -1,3 +1,5 @@
+#ifndef M5Battery_H
+#define M5Battery_H
 #include <M5Unified.h>
 
 class M5Battery {
@@ -21,7 +23,7 @@ private:
 
 public:
   M5Battery();
-  void setPosition(int32_t x, int32_t y);  
+  void setPosition(int32_t x, int32_t y);
   void setRotation(uint8_t rotation);
   void setSize(size_t size);
   void setBgColor(uint32_t color);
@@ -38,6 +40,11 @@ public:
   bool isCharging();
 };
 
+#endif // M5Battery_H
+
+#ifndef CONTEXT_H
+#define CONTEXT_H
+
 class Context {
 private:
   M5Battery* _bat;
@@ -46,3 +53,4 @@ public:
   Context(M5Battery* bat);
   M5Battery* getBattery();
 };
+#endif // CONTEXT_H

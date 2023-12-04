@@ -1,6 +1,6 @@
 #include "M5Battery.h"
 
-TaskHandle_t drawTaskHandle;
+static TaskHandle_t drawTaskHandle;
 
 Context::Context(M5Battery* bat) {
     _bat = bat;
@@ -10,7 +10,7 @@ M5Battery* Context::getBattery() {
     return _bat;
 }
 
-void drawLoop(void* args) {
+static void drawLoop(void* args) {
     Context* ctx = reinterpret_cast<Context*>(args);
     M5Battery* bat = ctx->getBattery();
 
